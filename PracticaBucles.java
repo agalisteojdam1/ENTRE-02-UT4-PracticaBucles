@@ -5,7 +5,7 @@ import java.util.Random;
 public class PracticaBucles {
     private final char ESPACIO = ' ';
     private final char CARACTER = '\u0040';
-    private Random generador;
+    private static Random generador;
 
     /**
      * Constructor  
@@ -40,10 +40,7 @@ public class PracticaBucles {
      *  Hazlo sin utilizar if
      */
     public boolean esImpar(int numero)   {
-        //TODO
-        
-        
-        return  false;
+        return  numero % 2 != 0;
     }
 
     /**
