@@ -31,10 +31,47 @@ public class PracticaBucles {
      *   Utiliza solo bucles while
      */
     public void generarNumeros(int n)   {
-        //TODO
+        int SumaImpar = 0;
+        int maximoPar = Integer.MIN_VALUE;
+        int par = 0;
+        int sumaAleatorios = 0;
+        int i = 0;
+        int aleatorio = generador.nextInt(6001) - 1000;
+
+        System.out.println("Nº máximo de aleatorios a generar " + n + "\no hasta que salga 0\n"); 
+
+        while(i < n && aleatorio != 0){
+            if(!esImpar(aleatorio)){
+                par++;
+
+                if(aleatorio > maximoPar){
+                    maximoPar = aleatorio;
+                }
+            }
+            else{
+                SumaImpar += aleatorio;
+            }
+            int sinCeros = obtenerNumeroSinCeros(aleatorio);
+            System.out.printf("%12d :" + "%5d",aleatorio, sinCeros);
+            i++;
+            if(i % 5 == 0){
+                System.out.println();
+            }
+
+            sumaAleatorios += aleatorio;
+
+            aleatorio = generador.nextInt(6001) - 1000;
+        }
+        if(par == 0){
+            maximoPar = 0;
+        }
+        double media = sumaAleatorios / i;
+
+        System.out.printf("\n%25s" + "%10.2f","Media:", media);
+        System.out.printf("\n%25s" + "%10d","Suma impares:",SumaImpar);
+        System.out.printf("\n%25s" + "%10d","Máximo pares:", maximoPar);
 
     }
-
     /**
      *  Devuelve true si numero es impar, false en otro caso
      *  Hazlo sin utilizar if
@@ -57,7 +94,7 @@ public class PracticaBucles {
         int exponente = 0;
         int resultado = 0;
 
-        while(a > 0){
+        while(a != 0){
             int cifra = a % 10;
             if(cifra == 0){
                 a = a / 10;
