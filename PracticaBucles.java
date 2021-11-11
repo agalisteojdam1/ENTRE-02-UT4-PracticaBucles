@@ -66,7 +66,7 @@ public class PracticaBucles {
             maximoPar = 0;
         }
         double media = sumaAleatorios / i;
-
+        System.out.println();
         System.out.printf("\n%25s" + "%10.2f","Media:", media);
         System.out.printf("\n%25s" + "%10d","Suma impares:",SumaImpar);
         System.out.printf("\n%25s" + "%10d","Máximo pares:", maximoPar);
