@@ -51,8 +51,7 @@ public class PracticaBucles {
             else{
                 SumaImpar += aleatorio;
             }
-            int sinCeros = obtenerNumeroSinCeros(aleatorio);
-            System.out.printf("%12d :" + "%5d",aleatorio, sinCeros);
+            System.out.printf("%12d :" + "%5d",aleatorio, obtenerNumeroSinCeros(aleatorio));
             i++;
             if(i % 5 == 0){
                 System.out.println();
@@ -133,6 +132,7 @@ public class PracticaBucles {
      *   
      */
     public void escribirLetraN(int altura)    {
+
         for(int fila = 1; fila <= altura; fila++){
             escribirCaracter(CARACTER,1);
             escribirCaracter(ESPACIO, fila - 1);
