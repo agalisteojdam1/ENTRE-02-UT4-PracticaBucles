@@ -29,18 +29,19 @@ public class TestPracticaBucles
         
         System.out.print("Dame nº máximo de aleatorios a generar (n > 0): ");
         int aleatorios = teclado.nextInt();
-        if(aleatorios <= 0){
-            System.out.println("Dame nº máximo de aleatorios a generar: ");
+        while(aleatorios <= 0){
+            System.out.print("Dame nº máximo de aleatorios a generar: ");
             aleatorios = teclado.nextInt();
         }
         bucle.generarNumeros(aleatorios);
+        
         Utilidades.hacerPausa();
         Utilidades.borrarPantalla();
         
         System.out.print("Teclea altura de la letra N(3 <= altura <= 10): "); 
         int altura = teclado.nextInt();
-        if(altura < 3 && altura > 10){
-            System.out.println("Altura incorrecta, teclea altura de la letra N (3 <= altura <= 10)");
+        while(altura < 3 || altura > 10){
+            System.out.print("Altura incorrecta, teclea altura de la letra N (3 <= altura <= 10): ");
             altura = teclado.nextInt();
         }
         bucle.escribirLetraN(altura);
