@@ -25,9 +25,18 @@ public class TestPracticaBucles
      */
     public static void main(String[] args)    {
         //TODO
+        Scanner teclado = new Scanner(System.in);
+        PracticaBucles bucle = new PracticaBucles();
         
-        
-        
+        System.out.println("¿Cuántos aleatorios genero?");
+        int aleatorios = teclado.nextInt();
+        if(aleatorios < 0){
+            System.out.println("Escriba un número positivo");
+            aleatorios = teclado.nextInt();
+        }
+        bucle.generarNumeros(aleatorios);
+        Utilidades.hacerPausa();
+        Utilidades.borrarPantalla();
         
     }
 }
