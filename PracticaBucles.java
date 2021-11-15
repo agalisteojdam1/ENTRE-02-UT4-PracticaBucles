@@ -33,7 +33,6 @@ public class PracticaBucles {
     public void generarNumeros(int n)   {
         int SumaImpar = 0;
         int maximoPar = Integer.MIN_VALUE;
-        int par = 0;
         int sumaAleatorios = 0;
         int i = 0;
         int aleatorio = generador.nextInt(6001) - 1000;
@@ -42,8 +41,6 @@ public class PracticaBucles {
 
         while(i < n && aleatorio != 0){
             if(!esImpar(aleatorio)){
-                par++;
-
                 if(aleatorio > maximoPar){
                     maximoPar = aleatorio;
                 }
@@ -60,20 +57,20 @@ public class PracticaBucles {
             sumaAleatorios += aleatorio;
             aleatorio = generador.nextInt(6001) - 1000;
         }
-        
-        if(par == 0){
-            maximoPar = 0;
-        }
-        
+
         double media = sumaAleatorios / i;
-        
+
         System.out.println();
         System.out.printf("\n%25s" + "%10.2f","Media:", media);
         System.out.printf("\n%25s" + "%10d","Suma impares:",SumaImpar);
-        System.out.printf("\n%25s" + "%10d","Máximo pares:", maximoPar);
-
+        if(maximoPar == Integer.MIN_VALUE){
+            System.out.printf("\n%25s" + "%19s", "Máximo pares:"," No ha salido par");
+        }
+        else{
+            System.out.printf("\n%25s" + "%10d","Máximo pares:", maximoPar);
+        }
     }
-    
+
     /**
      *  Devuelve true si numero es impar, false en otro caso
      *  Hazlo sin utilizar if
@@ -140,8 +137,7 @@ public class PracticaBucles {
             escribirCaracter(ESPACIO, altura - fila);
             escribirCaracter(CARACTER,1);
             System.out.println();
-            
-            
+
         }
     }
 
